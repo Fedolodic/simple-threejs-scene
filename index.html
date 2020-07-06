@@ -32,6 +32,9 @@
 <body>
 <script src="js/three.js"></script>
 <script>
+
+  // Add scene, camera, and renderer
+
   var scene = new THREE.Scene();
   // 3rd and 4th arguments are near and far clipping plane
   // Objects further away from the camera than the value of far or closer than near won't be rendered
@@ -43,6 +46,20 @@
   // Add renderer element to HTML document
   // This is a <canvas> element that the renderer uses to display the scene to us
   document.body.appendChild( renderer.domElement );
+
+  // Add cube
+
+  var geometry = new THREE.BoxGeometry();
+  // Material to color cube
+  var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+  // Mesh is an object that takes geometry, and applies a material to it
+  var cube = new THREE.Mesh( geometry, material );
+  // Add cube to scene at the coordinates (0,0,0)
+  scene.add( cube );
+
+  // Move camera out to avoid camera being inside of cube
+  camera.position.z = 5;
+
 </script>
 <!-- Add your site or application content here -->
 <p>Hello world! This is my first three.js app! I hope you like it :)</p>
