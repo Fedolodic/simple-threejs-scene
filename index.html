@@ -60,6 +60,15 @@
   // Move camera out to avoid camera being inside of cube
   camera.position.z = 5;
 
+  // Render scene
+
+  function animate() {
+    // This pauses when a user navigates to another browser tab, hence not wasting precious processing power and battery life
+    requestAnimationFrame( animate );
+    renderer.render( scene, camera );
+  }
+  animate();
+
 </script>
 <!-- Add your site or application content here -->
 <p>Hello world! This is my first three.js app! I hope you like it :)</p>
