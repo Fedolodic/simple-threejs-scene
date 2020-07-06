@@ -47,7 +47,7 @@
   // This is a <canvas> element that the renderer uses to display the scene to us
   document.body.appendChild( renderer.domElement );
 
-  // Add cube
+  // Add cube to scene
 
   var geometry = new THREE.BoxGeometry();
   // Material to color cube
@@ -65,6 +65,12 @@
   function animate() {
     // This pauses when a user navigates to another browser tab, hence not wasting precious processing power and battery life
     requestAnimationFrame( animate );
+
+    // Rotate the cube
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
     renderer.render( scene, camera );
   }
   animate();
